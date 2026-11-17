@@ -1,0 +1,249 @@
+AI Coding 越來越強，為什麼 Code 反而更難維護？Coding Agent、技術債與程式碼品質的真相
+https://www.youtube.com/watch?v=b-i1JXYovPw
+en・自動字幕
+
+[00:10] Do not mortgage your codebase in the
+[00:13] hopes that in a year the model will come
+[00:15] out that's smart enough to fix all your
+[00:17] problem.
+[00:28] Uh but it's very very like small
+[00:31] targeted like can you get the test to
+[00:33] pass?
+[00:33] >> Yeah.
+[00:34] >> Um obviously these are benchmarks.
+[00:36] They're different from verifiers but
+[00:38] it's like all the benchmark. Oh this
+[00:39] model scores 95% on Sweepbench coding is
+[00:42] solved. And it's like that's not what
+[00:44] real coding looks like.
+[00:59] Uh, but none of those really map to how
+[01:02] real software is built, which is they
+[01:04] all give the model the entire problem up
+[01:06] front. Yeah, here's the thing. Solve
+[01:08] this thing.
+[01:09] >> And what Slob Codebench does that's
+[01:10] really interesting is it it gives the
+[01:13] model a thing to build green field and
+[01:15] then it says, "Cool, now take that
+[01:17] codebase and add this feature." Now take
+[01:19] that codebase and add this feature. Now
+[01:21] take that and so there they have these
+[01:23] like challenges each has like three to
+[01:25] 10 checkpoints in it.
+[01:26] >> Yeah.
+[01:26] >> And so the problem is like what it's
+[01:28] trying to demonstrate is like as models
+[01:30] continue to work unattended in the same
+[01:33] codebase without knowing the whole
+[01:35] problem up front you have this problem
+[01:36] where like the code gets worse and worse
+[01:38] over time. And it kind of shows that
+[01:40] like the number of failing tests just
+[01:42] like trends up for all the models. And
+[01:44] like I think GPT 5.5 CEX when they ran
+[01:47] it in May got like a 15% on this market.
+[02:04] like you can't capture everything. Uh
+[02:06] and the source of truth should be the
+[02:07] code not some specification or plan.
+[02:10] >> But can you in this planning process
+[02:12] eliminate as many failure modes as
+[02:15] possible? Can you just, you know, from a
+[02:18] 25,000 foot view of the problem, like a
+[02:20] one-pager, can I eliminate like 50% of
+[02:23] the bad things that the agent might have
+[02:25] done, not necessarily going to do, but
+[02:26] could have done. And then can we zoom
+[02:28] into, you know, the 10,000 foot view and
+[02:30] eliminate another like 80% of bad
+[02:33] solutions to this problem. Um, so that
+[02:36] by the end when the code comes out, it's
+[02:37] more likely to be, you know, 0 to 10%
+[02:39] rework required rather than, you know,
+[02:42] 25 to 50 to 75% rework, which is common
+[02:45] with like if you try to oneshot most
+[02:47] larger agent PRs. Like people don't just
+[02:49] say, "Hey, Claude, go do this thing."
+[02:51] They're sitting there working back and
+[02:52] forth.
+[03:01] And my my sort of crusade has always
+[03:05] been like okay what actually kind of
+[03:06] works what is practical and like what
+[03:09] can you what understanding can you build
+[03:10] up from like first principles rather
+[03:13] than like working backwards from what
+[03:14] you see on the internet.
+[03:15] >> Yeah. If we give productivity a
+[03:17] multiplier
+[03:18] >> is 10x then realistic or when should
+[03:20] people be happy? Is it like 2x 5x 3x the
+[03:24] other number? I mean if you think about
+[03:25] it like in terms of like economic impact
+[03:27] in the world I think every engineer
+[03:29] going two to 4x faster would be
+[03:32] transformational to human society. The
+[03:34] amount of value that we would get the
+[03:36] the extent to which our cities would
+[03:38] improve our our you know the value of
+[03:40] things would improve like just life
+[03:43] would get better would be insane.
+[03:46] >> Uh but everyone's going to miss out on
+[03:48] that because they're too busy trying to
+[03:49] get to 100x.
+[03:50] >> Yeah.
+[03:50] >> Um and I think 10x is possible.
+[03:53] >> Sorry, what were you going to say? I was
+[03:54] saying people are trying to go infinite.
+[03:56] We don't need engineers anymore.
+[03:57] >> Yeah. People are trying to go infinite
+[03:58] or 100x or 10x or whatever it is and
+[04:01] it's like figure out how to go two to
+[04:02] three times faster
+[04:04] >> and then you can go do two to three
+[04:06] times on top of that and two to three
+[04:07] times up on that. But if you try to
+[04:08] throw out everything we've done, I mean
+[04:10] there's something to be said for like
+[04:11] don't get stuck and shackled to your
+[04:13] traditions and like some things that you
+[04:15] used to do may not be necessary anymore.
+[04:17] But if you go and throw out everything
+[04:19] that we've been doing and try to like
+[04:21] rebuild all of engineering from scratch,
+[04:23] it's not going to work.
+[04:36] is having a human in the loop. The
+[04:38] ability to be like, "No, I don't like I
+[04:40] don't want to refactor it that way. I
+[04:41] want to refactor it this way." And like
+[04:42] I think humans are good at this. Uh
+[04:44] skilled experienced software engineers
+[04:46] are good at this because they have like
+[04:49] been bitten by bad architecture. So many
+[04:52] they've been up at 3 in the morning
+[04:53] trying to fix an issue and been like,
+[04:54] "Oh my god, I hate this pattern. I'm
+[04:56] never letting anyone merge anything with
+[04:58] this pattern in it again." You build up
+[05:00] this taste. uh and we haven't figured
+[05:02] out how to put that taste into models
+[05:04] and so for now humans have to do it. We
+[05:05] might try to figure it out uh literally.
+[05:19] But like I think like learning how to
+[05:22] build a really good design doc which
+[05:24] again learning how to build a really
+[05:25] good prompt for the whatever session is
+[05:27] going to be building or in that session
+[05:29] um is uh is going to emerge as well is
+[05:33] like just as important if not more
+[05:34] important than code review.
+[05:47] about 10% of our PRs are merged by you I
+[05:51] call them like janitor bots or whatever
+[05:53] that run overnight. My co-founder gave a
+[05:54] talk on like control loops and how we
+[05:56] build all of this but we basically have
+[05:57] like things that we want to be true
+[05:59] about the codebase like desired end
+[06:01] state and then we have like a process to
+[06:04] progress the codebase that direction.
+[06:05] It's kind of like a thermostat, right?
+[06:07] Okay, I want it to be 71 or whatever the
+[06:09] European version of 71 is. uh and it's
+[06:12] 69. Cool. We're going to turn on the
+[06:14] heat. Um and so it's like we wake up
+[06:16] every morning to a handful of PRs along
+[06:19] different dimensions uh of cleaning up
+[06:21] something in the codebase. Refactoring,
+[06:23] fixing a React Doctor rule, migrating an
+[06:25] endpoint from the old framework to the
+[06:26] new one. Everything we do automatically
+[06:28] in the factory is like very small
+[06:30] because we want it to be digestible. If
+[06:31] the PR is too big, it never gets merged.
+[06:34] Um so that's probably like 10% of our
+[06:35] PRs.
+[06:46] I mean, I just I I don't want to wake up
+[06:49] to 10,000 lines of code. It's just like
+[06:51] not like if I'm if I'm if I'm planning
+[06:53] on reading the code. I think the work is
+[06:55] a lot more human in the loop than than
+[06:57] that. Um there are very specific things
+[06:59] that lend themselves to hill climbing
+[07:01] overnight. Um but I think a lot of the
+[07:04] work you do, you're just going to you're
+[07:06] going to enjoy it more. you're going to
+[07:08] get more done. You're actually going to
+[07:09] have more through because that that also
+[07:11] requires you to do a ton of paralyzing.
+[07:12] Of course, it's like plan 10 things and
+[07:14] then kick them all off overnight and
+[07:15] know what I'm going to spend the first
+[07:16] four hours of my day reviewing code.
+[07:18] >> Like, no, I'm going to plan two things.
+[07:20] I'm going to start them now. I'm going
+[07:22] to like watch them as they go and I'm
+[07:24] going to get changes landed in
+[07:25] production today. It's much better to do
+[07:28] two things, two things, two things than
+[07:29] like, okay, I have 10 things in flight
+[07:31] and they're all kind of going and oh, I
+[07:32] forgot about two of them and by four
+[07:34] days later I did ship two of them, but
+[07:36] the other three are still in flight.
+[07:37] It's just the same thing that was always
+[07:39] true about engineering is still true and
+[07:41] all work. It's like do less things in
+[07:43] parallel. It feels more efficient to
+[07:46] like uh I don't know how to say like to
+[07:49] to like try to like multitask really
+[07:51] hard. Uh but your endto-end throughput
+[07:53] of like value delivered to the customer
+[07:55] will be faster if you do less things
+[07:57] like a little bit slower and just like
+[07:59] take a little bit more care with them.
+[08:10] And when I do paralyze I have one most
+[08:13] important thing and it's not like okay
+[08:14] launch three tasks okay get this one to
+[08:16] design now get this one to design now
+[08:18] get this one to design okay now move
+[08:19] this one forward now move this. It's
+[08:20] like when the top when the most
+[08:22] important thing is unblocked, we drop
+[08:24] whatever we're doing. Even if it's like
+[08:25] I'm in the middle of writing a prompt, I
+[08:27] will go back to the most important one
+[08:28] because the goal should be like land one
+[08:31] thing. You should always have one most
+[08:32] important thing and your top goal is to
+[08:33] get that thing landed and the other
+[08:35] stuff you're working on is just like
+[08:37] stuff to fill the time while you're
+[08:39] waiting for that thing to be unlocked.
+[08:40] >> Yeah. You should always know what the
+[08:41] most important thing is that
+[08:43] >> as has always been true in engineering
+[08:45] >> and everything really. The feeling of
+[08:47] parallelization is very cool though and
+[08:50] I haven't done any I haven't done any
+[08:51] measurements but overall if you look at
+[08:54] the most important thing that needs to
+[08:55] go out and you parallelize along the way
+[08:57] I wonder if that thing would go faster
+[08:59] if you just
+[09:00] >> wait and just focus on that one thing
+[09:02] >> I want to
+[09:03] >> like traditionally
+[09:04] >> I want to see a study it would be very
+[09:06] zen
+[09:07] >> I want to see a study of like the you
+[09:09] know they hook up like the brain scans
+[09:10] and like watch someone's brain as it's
+[09:13] working I want to see someone running
+[09:15] six quads in parallel Well, I want to
+[09:17] see one person running one coding agent
+[09:19] at a time and then I want to see someone
+[09:21] sitting in a casino cranking the j the
+[09:23] the thing and I want to slot machine.
+[09:24] >> Yeah, exactly. Uh, and then maybe maybe
+[09:27] the person doing the slot machine and
+[09:28] then maybe someone else at like the
+[09:30] poker table. Whereas like a poker you
+[09:32] play one hand at a time and you focus.
