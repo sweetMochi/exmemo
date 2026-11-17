@@ -1,7 +1,3 @@
-AI Coding 越來越強，為什麼 Code 反而更難維護？Coding Agent、技術債與程式碼品質的真相
-https://www.youtube.com/watch?v=b-i1JXYovPw
-en・自動字幕
-
 [00:10] Do not mortgage your codebase in the
 [00:13] hopes that in a year the model will come
 [00:15] out that's smart enough to fix all your
